@@ -1,0 +1,11 @@
+#
+# mod-hearthstone-cd
+#
+# Server SQL sets 5-minute CD. Client icon timer needs Spell.dbc patch via tools/patch-hearthstone-dbc.sh
+#
+[worldserver]
+
+# HearthstoneCd.CooldownSeconds
+#        Description: Documented cooldown (SQL baked for 300 seconds)
+#        Default: 300
+HearthstoneCd.CooldownSeconds = 300
