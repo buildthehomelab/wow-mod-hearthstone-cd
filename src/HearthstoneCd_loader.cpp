@@ -1,6 +1,6 @@
 void AddHearthstoneCdScripts();
 
-void Addmod_hearthstone_cd_Scripts()
+void Addmod_hearthstone_cdScripts()
 {
     AddHearthstoneCdScripts();
 }

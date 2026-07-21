@@ -9,10 +9,9 @@ public:
 
     void OnAfterConfigLoad(bool /*reload*/) override
     {
-        // SQL-only module: world updates live under data/sql/. Conf flag is informational.
-        bool enabled /* cooldown configured */ = sConfigMgr->GetOption<uint32>("HearthstoneCd.CooldownSeconds", 300) > 0;
-        if (enabled)
-            LOG_INFO("server.loading", "HearthstoneCd: module present (SQL updates via module data/sql)");
+        uint32 cd = sConfigMgr->GetOption<uint32>("HearthstoneCd.CooldownSeconds", 300);
+        if (cd)
+            LOG_INFO("server.loading", "HearthstoneCd: module present ({}s cooldown; SQL + optional DBC patch)", cd);
     }
 };
 
