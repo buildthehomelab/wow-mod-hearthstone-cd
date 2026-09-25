@@ -1,9 +1,17 @@
 #
 # mod-hearthstone-cd
 #
-# Server SQL sets 5-minute CD. Client icon timer needs Spell.dbc patch via tools/patch-hearthstone-dbc.sh
+# Server SQL sets 5-minute CD. The module pushes it to the client after each cast;
+# tools/patch-hearthstone-dbc.sh optionally fixes tooltips too.
 #
 [worldserver]
+
+# HearthstoneCd.Enabled
+#        Description: After a cast of a spell with a non-zero spell_cooldown_overrides
+#                     row, push the server's cooldown to the 3.3.5 client (it otherwise
+#                     starts the 30 min / 15 min Spell.dbc timer).
+#        Default: 1 (enabled)
+HearthstoneCd.Enabled = 1
 
 # HearthstoneCd.CooldownSeconds
 #        Description: Documented cooldown (SQL baked for 300 seconds)
